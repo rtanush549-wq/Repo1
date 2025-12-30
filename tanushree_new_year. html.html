@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>শুভ নববর্ষ Tanushree Roy ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6f91, #ff9a9e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 34px;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.3);
+  max-width: 380px;
+  animation: fadeIn 2.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.heart {
+  font-size: 44px;
+  animation: beat 1.3s infinite;
+  margin-bottom: 12px;
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 26px;
+  background: #ffffff;
+  color: #ff4f7a;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffe6ec;
+}
+
+@keyframes beat {
+  0%,100% {transform:scale(1);}
+  50% {transform:scale(1.25);}
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Rabindra-style Instrumental with Fade -->
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_48f4b92d33.mp3?filename=indian-classical-flute-122261.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <div class="heart">❤️</div>
+  <h1>শুভ নববর্ষ, Tanushree Roy</h1>
+
+  <p>
+    এই নতুন বছরটা  
+    শুধু ক্যালেন্ডারের পাতা বদলাক না,<br>
+    একটু আলো ঢুকুক তোমার প্রতিটা দিনে।
+    <br><br>
+    তুমি জানো কি,<br>
+    কিছু মানুষ না থাকলে<br>
+    সময় এগোয়, কিন্তু মন এগোয় না।
+    <br><br>
+    তুমি ঠিক তেমনই—<br>
+    আমার সময়ের ভেতরের শান্ত জায়গাটা।
+  </p>
+
+  <p>
+    <strong>“হা গো…”</strong><br>
+    এই দুটো শব্দেই  
+    আমার অনেক না বলা ভালোবাসা লুকিয়ে থাকে।
+  </p>
+
+  <button onclick="openSecret()">আরও একটু 🌙</button>
+</div>
+
+<!-- PAGE 2 (SECRET) -->
+<div class="card hidden" id="page2">
+  <h1>তোমার জন্য…</h1>
+
+  <p>
+    “ভালোবেসে যদি সুখ না পাও,<br>
+    তবু ভালোবাসা ছেড়ো না।”  
+    <br><br>
+    — রবীন্দ্রনাথ ঠাকুর
+  </p>
+
+  <p>
+    এই বছরেও,<br>
+    নিঃশব্দে,<br>
+    অজান্তে,<br>
+    আমি তোমার পাশেই থাকি।
+  </p>
+
+  <button onclick="finalMsg()">শেষ কথা 🤍</button>
+</div>
+
+<script>
+const music = document.getElementById("bgm");
+music.volume = 0;
+music.play();
+
+let fade = setInterval(() => {
+  if (music.volume < 0.5) music.volume += 0.01;
+  else clearInterval(fade);
+}, 200);
+
+function openSecret() {
+  document.getElementById("page1").classList.add("hidden");
+  document.getElementById("page2").classList.remove("hidden");
+}
+
+function finalMsg() {
+  alert("এই নববর্ষে শুধু একটাই কথা — আমি আছি। — Tanush Roy ❤️");
+}
+</script>
+
+</body>
+</html>
